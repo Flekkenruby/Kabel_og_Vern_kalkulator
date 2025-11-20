@@ -4,6 +4,7 @@ sikringer = [10,13,15,16,20,25,32,40,50,63]
 karakt = ["2-3","3-5","5-10","8-12","10-20"]
 karaktt = ["A","B","C","K","D"]
 sikring = None
+kvadrat = [1.5,2.5,4,6,10]
 def table_52B_1():
     pass
 def table_52B_2_CU(forlegning):
@@ -77,7 +78,7 @@ def kabel(forlegning,sikring,temp,isolasjon):
     for i in range(len(col)):
         x = col[i]*temp*gruppe
         if x >= sikring:
-            return col[i]
+            return [x,kvadrat[i]]
         
 while True:
     parameters = input("Pavgitt, U, cos, n, SI, forlegning, temp, isolasjon"+ "\n")
@@ -103,5 +104,5 @@ while True:
                 if sikringer[i] >= Ib:
                     sikring = sikringer[i]
                     break
-        print(str((math.ceil(Ib*100)/100))+"A "+ str(sikring)+"A "+karakteristikk(Ib,SI)+" "+str((math.ceil(kabel(forlegning,sikring,temp,isolasjon)*100)/100))+"mm²")
+        print(str((math.ceil(Ib*100)/100))+"A "+ str(sikring)+"A "+karakteristikk(Ib,SI)+" "+str((math.ceil(kabel(forlegning,sikring,temp,isolasjon)[1]*100)/100))+"mm²"+" "+str((math.ceil(kabel(forlegning,sikring,temp,isolasjon)[0]*100)/100))+"A")
         parameters = None
