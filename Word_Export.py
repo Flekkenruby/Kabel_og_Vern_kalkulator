@@ -11,70 +11,86 @@ def les():
         print("Lager filen")
         with open(current_dir+"\\mal.txt", "w+", encoding="utf-8") as file:
             file.write("#Mal for kabel og vern \n"
-                       "#Skriv inn hva du vill at skal skrives ut. \n"
-                       "#For at du skal skrive inn variabler og formler bruker du disse variablenene: \n"
-                       "#{Pavgitt} = avgitt effekt av motoren. \n"
-                       "#{U} = spenning. \n"
-                       "#{cos_phi} = cos. \n"
-                       "#{n} = virkningsgrad. \n"
-                       "#{SI} = startstrømsfaktor. \n"
-                       "#{forlegning} = forlegningsmetode. \n"
-                       "#{sikring} = sikring. \n"
-                       "#{temp} = temperatur. \n"
-                       "#{isolasjon} = isolasjon. \n"
-                       "#{kabler} = antall kabler. \n"
-                       "#{lengde_kabel} = lengde av kabel. \n"
-                       "#{distanse_kabel} = distanse mellom kabel. \n"
-                       "#{distanse_tak} = distanse mellom tak. \n"
-                       "#{kabelbro} = antall kabelbro. \n"
-                       "#{kabelbro1} = antall kabelbro1. \n"
-                       "#{kabelbro2} = antall kabelbro2. \n"
-                       "#{kabelbro3} = antall kabelbro3. \n"
-                       "#{krav} = krav. \n"
-                       "#{isolasjon} = isolasjon. \n"
-                       "#{kvadrat} = kvadrat. \n"
-                       "#{Iz} = Strømføringsevne. \n"
-                       "#{DeltaU} = Spenningsfall i volt. \n"
-                       "#{deltaU} = Spenningsfall i prosent. \n"
-                       "#{Ib} = Belastningsstrøm. \n"
-                       "#{gruppe_faktor} = gruppe_faktor. \n"
-                       "#{temp_faktor} = temp_faktor. \n"
+                        "#Skriv inn hva du vill at skal skrives ut. \n"
+                        "#For at du skal skrive inn variabler og formler bruker du disse variablenene: \n"
+                        "#{Pavgitt} = avgitt effekt av motoren \n"
+                        "#{U} = spenning \n"
+                        "#{cos_phi} = cos φ \n"
+                        "#{n} = virkningsgrad \n"
+                        "#{SI} = startstrømsfaktor \n"
+                        "#{forlegning} = forlegningsmetode \n"
+                        "#{sikring} = sikring \n"
+                        "#{temp} = temperatur \n"
+                        "#{isolasjon} = isolasjon \n"
+                        "#{kabler} = antall kabler \n"
+                        "#{lengde_kabel} = lengde på kabel \n"
+                        "#{distanse_kabel} = avstand mellom kabler \n"
+                        "#{distanse_tak} = avstand til tak \n"
+                        "#{kabelbro} = kabel ligger på kabelbro \n"
+                        "#{kabelbro1} = antall kabelbro i høyden \n"
+                        "#{kabelbro2} = type kabelbro \n"
+                        "#{kabelbro3} = plassering kabelbro \n"
+                        "#{krav_spenningsfall} = maks spenningsfall \n"
+
+                        "#{kvadrat} = ledertverrsnitt \n"
+                        "#{Iz} = strømføringsevne \n"
+                        "#{DeltaU} = spenningsfall i volt \n"
+                        "#{deltaU} = spenningsfall i prosent \n"
+                        "#{Ib} = belastningsstrøm \n"
+                        "#{gruppe_faktor} = gruppefaktor \n"
+                        "#{temp_faktor} = temperaturfaktor \n"
+                        "#{Iz_tabell} = tabell for Iz \n"
+                        "#{temp_tabell} = tabell for tempfaktor \n"
+                        "#{gruppe_tabell} = tabell for gruppefaktor \n"
+
+                        "#{karakteristikk_trip} = tripsstrøm \n"
+                        "#{karakteristikk_område} = karakteristikkområde \n"
+                        "#{karakteristikk} = karakteristikk \n"
+
+                        "#[e]{motorstrøm} = motorstrøm \n"
+                        "#[e]{spenningsfall} = spenningsfall \n"
+                        "#[e]{spenningsfall_prosent} = spenningsfall i prosent \n"
+                        "#[e]{krav_strøm} = krav til strøm \n"
                        
-                       "Avgitt effekt av motoren er {Pavgitt}W \n"
-                       "Spenningen på motoren er {U}V \n"
-                       "Cos er {cos_phi} \n"
-                       "Virkningsgrad er {n} \n"
-                       "Startstrømsfaktor er {SI} \n"
-                       "Forlegningsmetode er {forlegning} \n"
-                       "Sikring er {sikring}A \n"
-                       "Temperatur er {temp}°C \n"
-                       "Isolasjonen er {isolasjon} \n"
-                       "Antall kabler er {kabler} \n"
-                       "Lengden på kabelen er {lengde_kabel}m \n"
-                       "Det er en kabeltykkelse mellom kabelene {distanse_kabel} \n"
-                       "Kabelen ligger rett under et tak {distanse_tak} \n"
-                       "Kabelen ligger på en kabelbro {kabelbro} \n"
-                       "Det er {kabelbro1} Kabelbro i høyden \n"
-                       "Kabelbroen er {kabelbro2} \n"
-                       "Kabelbroen er {kabelbro3} \n"
-                       "Maksimum spenningsfall er {krav_spenningsfall}% \n"
+                       
+                        "Avgitt effekt av motoren er {Pavgitt}W \n"
+                        "Spenningen på motoren er {U}V \n"
+                        "Cos er {cos_phi} \n"
+                        "Virkningsgrad er {n} \n"
+                        "Startstrømsfaktor er {SI} \n"
+                        "Forlegningsmetode er {forlegning} \n"
+                        "Sikring er {sikring}A \n"
+                        "Temperatur er {temp}°C \n"
+                        "Isolasjonen er {isolasjon} \n"
+                        "Antall kabler er {kabler} \n"
+                        "Lengden på kabelen er {lengde_kabel}m \n"
+                        "Det er en kabeltykkelse mellom kabelene {distanse_kabel} \n"
+                        "Kabelen ligger rett under et tak {distanse_tak} \n"
+                        "Kabelen ligger på en kabelbro {kabelbro} \n"
+                        "Det er {kabelbro1} Kabelbro i høyden \n"
+                        "Kabelbroen er {kabelbro2} \n"
+                        "Kabelbroen er {kabelbro3} \n"
+                        "Maksimum spenningsfall er {krav_spenningsfall}% \n"
 
-                       "Kvadrat er {kvadrat} \n"
-                       "Strømføringsevne er {Iz}A \n"
-                       "Spenningsfall i volt er {DeltaU}V \n"
-                       "Spenningsfall i prosent er {deltaU}% \n"
-                       "Belastningsstrøm er {Ib}A \n"
-                       "Gruppefaktor er {gruppe_faktor} \n"
-                       "Tempfaktor er {temp_faktor} \n"
-                       "Tabbelen for Iz er {Iz_tabell} \n"
-                       "Tabellen for Temp_faktor er {temp_tabell} \n"
-                       "Tabellen for Gruppe_faktor er {gruppe_tabell} \n"
+                        "Kvadrat er {kvadrat} \n"
+                        "Strømføringsevne er {Iz}A \n"
+                        "Spenningsfall i volt er {DeltaU}V \n"
+                        "Spenningsfall i prosent er {deltaU}% \n"
+                        "Belastningsstrøm er {Ib}A \n"
+                        "Gruppefaktor er {gruppe_faktor} \n"
+                        "Tempfaktor er {temp_faktor} \n"
+                        "Tabbelen for Iz er {Iz_tabell} \n"
+                        "Tabellen for Temp_faktor er {temp_tabell} \n"
+                        "Tabellen for Gruppe_faktor er {gruppe_tabell} \n"
+                        "karakteristikk tripsrøm er {karakteristikk_trip}A \n"
+                        "karakteristikk område er {karakteristikk_område} \n"
+                        "karakteristikk er {karakteristikk} \n"
 
-                       "[e]{motorstrøm}\n"
-                       "[e]{spenningsfall}\n"
-                       "[e]{spenningsfall_prosent}\n"
-                       "[e]{krav_strøm}\n"
-                       )
+                        "[e]{motorstrøm}\n"
+                        "[e]{spenningsfall}\n"
+                        "[e]{spenningsfall_prosent}\n"
+                        "[e]{krav_strøm}\n"
+                        )
             path=current_dir+r"\mal.txt"
             return path
 
@@ -93,7 +109,7 @@ def equation(line):
     if "1" in line[0]:
         keyboard.write(f"I_B=P_avgitt/(\\sqrt(3)×U×cos(φ)×\\eta)={line[1]}/(\\sqrt(3)×{line[2]}×{line[3]}×{line[4]})={line[5]}A")
     if "2" in line[0]:
-        keyboard.write(f"\\Delta U=(\\sqrt(3)×\\rho×M×Ib)/mm^2=(\\sqrt(3)×{0.0175}×{line[1]}×{line[2]})/{line[3]}={line[4]}V")
+        keyboard.write(f"\\Delta U=(\\sqrt(3)×\\rho×M×Ib×cos(φ))/mm^2=(\\sqrt(3)×{0.0175}×{line[1]}×{line[2]}×{line[3]})/{line[4]}={line[5]}V")
     if "3" in line[0]:
         keyboard.write(f"\\Delta u=(\\Delta U)/U*100={line[1]}/{line[2]}*100={line[3]}%")
     if "4" in line[0]:
@@ -117,7 +133,6 @@ def tekstprossesering(Pa, U, Ib, sikring, karakeristikk, Cable_size, Cable_Curre
                 lines[i] = lines[i].replace("{forlegning}",str(forlegning))
                 lines[i] = lines[i].replace("{sikring}",str(sikring))
                 lines[i] = lines[i].replace("{temp}",str(temp))
-                lines[i] = lines[i].replace("{isolasjon}",str(isolasjon))
                 lines[i] = lines[i].replace("{kabler}",str(kabler))
                 lines[i] = lines[i].replace("{lengde_kabel}",str(lengde_kabel))
                 if distanse_kabel == "J":
@@ -148,7 +163,7 @@ def tekstprossesering(Pa, U, Ib, sikring, karakeristikk, Cable_size, Cable_Curre
                 lines[i] = lines[i].replace("{gruppe_tabell}",str(table_52B_1(forlegning)[4]))
 
                 lines[i] = lines[i].replace("{motorstrøm}",str(f",[1],{Pa},{U},{cos_phi},{n},{math.ceil(Ib*100)/100}"))
-                lines[i] = lines[i].replace("{spenningsfall}",str(f",[2],{lengde_kabel}M,{math.ceil(Ib*100)/100}A,{Cable_size}mm^2,{math.ceil(DeltaU*100)/100}"))
+                lines[i] = lines[i].replace("{spenningsfall}",str(f",[2],{lengde_kabel}M,{math.ceil(Ib*100)/100}A,{cos_phi},{Cable_size}mm^2,{math.ceil(DeltaU*100)/100}"))
                 lines[i] = lines[i].replace("{spenningsfall_prosent}",str(f",[3],{math.ceil(DeltaU*100)/100}V,{U}V,{math.ceil(deltaU*100)/100}"))
                 lines[i] = lines[i].replace("{krav_strøm}",str(f",[4],{math.ceil(Ib*100)/100},{sikring},{math.ceil(Cable_Current*100)/100}"))
                 lines[i] = lines[i].replace("{I_start}", str(math.ceil(Ib * SI * 100) / 100))
