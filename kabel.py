@@ -1,6 +1,6 @@
 import math
 from tables import *
-import Word_Export
+from Word_Export import skriv
 sikringer = [10,13,15,16,20,25,32,40,50,63]
 karakt = ["2-3","3-5","5-10","8-12","10-20"]
 karaktt = ["A","B","C","K","D"]
@@ -101,11 +101,13 @@ def kabel(forlegning, sikring, temp, isolasjon, kabler, kabelbro, kabelbro1, kab
     gruppe_faktor = func(forlegning,kabelbro,kabelbro1,kabelbro2,kabelbro3,kabler,distanse_kabel,distanse_tak)
     if gruppe_faktor == 0 or gruppe_faktor == None:
         raise ValueError("Det er for mange kabler. Vennligst prøv igjen med mindre antall kabler.")
+
+    #Iz
     for i in range(len(col)):
         Iz = col[i]*temp_faktor*gruppe_faktor
         if Iz>= sikring:
             if lengde_kabel > 0:
-                DeltaU = (math.sqrt(3)*0.0175*lengde_kabel*Ib)/kvadrat[i]
+                DeltaU = (math.sqrt(3)*0.0175*lengde_kabel*Ib*cos_phi)/kvadrat[i]
                 deltaU = (DeltaU)/U*100
                 if deltaU < krav:
                     return [kvadrat[i],Iz,DeltaU,deltaU,temp_faktor,gruppe_faktor]
@@ -192,7 +194,7 @@ while True:
         )
         a = input("Vill du skrive inn i word? (J/N): ").upper()
         if a == "J":
-            Word_Export.skriv(Pa, U, Ib, sikring, karakteristikk(Ib, SI, sikring), cable_size, cable_current, DeltaU, deltaU, isolasjon, kabler, lengde_kabel, distanse_kabel, distanse_tak, kabelbro, kabelbro1, kabelbro2, kabelbro3, krav, gruppe_faktor, temp_faktor,cos_phi, n,temp,SI,forlegning,karakteristikk_område(forlegning))
+            skriv(Pa, U, Ib, sikring, karakteristikk(Ib, SI, sikring), cable_size, cable_current, DeltaU, deltaU, isolasjon, kabler, lengde_kabel, distanse_kabel, distanse_tak, kabelbro, kabelbro1, kabelbro2, kabelbro3, krav, gruppe_faktor, temp_faktor,cos_phi, n,temp,SI,forlegning,karakteristikk_område(karakteristikk(Ib, SI, sikring)))
             print("Programmet er ferdig å skrive.")
             #Pa, U, Ib, sikring, karakeristikk, Cable_size, Cable_Current, DeltaU, deltaU, isolasjon, kabler, lengde_kabel, distanse_kabel, distanse_tak, kabelbro, kabelbro1, kabelbro2, kabelbro3, krav, kvadrat, gruppe_faktor, temp_faktor 
     except Exception as e:
@@ -201,4 +203,3 @@ while True:
         print("Value Error:", e)
     finally:
         print("Programmet er avsluttet.")
-        
